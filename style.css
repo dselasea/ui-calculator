@@ -1,0 +1,55 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #1c1c1c;
+}
+
+.container {
+    margin: 1.5rem auto;
+    max-width: 400px;
+    padding: 2rem;
+
+}
+
+.container__screen {
+    color: white;
+    padding: 1.5rem 1rem;
+    direction: rtl;
+    font-size: 2.5rem;
+}
+
+.container__buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: 1rem;
+    gap: 1rem;
+    justify-items: center;
+}
+
+.btn {
+    height: 60px;
+    width: 60px;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 100%;
+    border: 0;
+}
+
+.gray {
+    background: #D4D4D2;
+}
+
+.orange {
+    background: #FF9500;
+    color: #fff;
+}
+
+.grey {
+    background: #505050;
+    color: #fff;
+}
+
