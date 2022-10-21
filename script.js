@@ -6,7 +6,7 @@ const back = document.getElementById("back");
 // const zero = document.createTextNode("0")
 // screenNumber.appendChild(zero)
 let store = []
-let storeCalculations = []
+let calculate; 
 
 button.forEach((btn) => {
     btn.addEventListener("click", (e) => {
@@ -58,7 +58,9 @@ button.forEach((btn) => {
                 screenNumber.textContent = store.join("")
             }
         }else if(e.target.textContent === "="){
-            console.log(store.join(""))
+            calculate = store.join("").replace(/[^-()\d/*+.]/g, '')
+            console.log(typeof eval(calculate))
+            screenNumber.textContent = eval(calculate)
         }
     })
 })
@@ -81,48 +83,3 @@ back.addEventListener("click", () => {
         store = []
     }
 })
-
-const checkCharacter = () => {
-    if(store[store.length === 0] && store.length[0] != "+"){
-        return false;
-    }
-}
-
-const add = () => {
-    return "+"
-}
-
-const substract = () => {
-    return "-"
-}
-
-const multiply = () => {
-    return "*"
-}
-
-const divide = () => {
-    return "/"
-}
-
-const operate = (operator, number1, number2) => {
-    let calculation;
-    switch(operator){
-        case "+":
-            calculation = number1 + number2
-            break;
-        case "-":
-            calculation = number1 - number2
-            break;
-        case "*":
-            calculation = number1 * number2
-            break;
-        case "/":
-            calculation = number1 / number2
-            break;
-    }
-    return calculation
-}
-
-
-console.log(operate(divide(), 2, 4))
-
